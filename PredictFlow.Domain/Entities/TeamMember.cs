@@ -1,0 +1,30 @@
+namespace PredictFlow.Domain.Entities;
+
+public class TeamMember
+{
+    public Guid TeamId { get; private set; }
+    public Guid UserId { get; private set; }
+
+    public string Role { get; private set; }
+    public string Skills { get; private set; }
+    public int Workload { get; private set; }
+    public int Availability { get; private set; }
+    public string? PerformanceMetrics { get; private set; }
+
+    private TeamMember() { }
+
+    public TeamMember(Guid teamId, Guid userId, string role, string skills, int availability)
+    {
+        TeamId = teamId;
+        UserId = userId;
+        Role = role;
+        Skills = skills;
+        Workload = 0;
+        Availability = availability;
+    }
+
+    public void UpdateWorkload(int value)
+    {
+        Workload = value;
+    }
+}
