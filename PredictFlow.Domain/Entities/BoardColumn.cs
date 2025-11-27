@@ -1,5 +1,3 @@
-using Task = PredictFlow.Domain.Entities.Task;
-
 namespace PredictFlow.Domain.Entities;
 
 public class BoardColumn
@@ -9,7 +7,7 @@ public class BoardColumn
     public string Name { get; private set; }
     public int Position { get; private set; }
 
-    public List<Task> Tasks { get; private set; } = new();
+    public List<TaskEntity> Tasks { get; private set; } = new();
 
     private BoardColumn() { }
 

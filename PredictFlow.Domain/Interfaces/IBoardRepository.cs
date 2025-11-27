@@ -1,4 +1,7 @@
-namespace PredictFlow.Domain.Repositories;
+using PredictFlow.Domain.Entities;
+using Task = System.Threading.Tasks.Task;
+
+namespace PredictFlow.Domain.Interfaces;
 
 public interface IBoardRepository
 {
@@ -6,4 +9,5 @@ public interface IBoardRepository
     Task<IEnumerable<Board>> GetByProjectIdAsync(Guid projectId);
     Task AddAsync(Board board);
     Task UpdateAsync(Board board);
+    Task DeleteAsync(Board board);
 }

@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "FIdpOohA2iA=",
+  "dgSpecHash": "MxZRBmz8cwk=",
   "success": true,
   "projectFilePath": "/home/coders/Escritorio/DanielArizaCsharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/coders/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/home/coders/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }

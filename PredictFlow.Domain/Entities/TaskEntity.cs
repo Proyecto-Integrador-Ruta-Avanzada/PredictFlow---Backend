@@ -2,7 +2,7 @@ using PredictFlow.Domain.ValueObjects;
 
 namespace PredictFlow.Domain.Entities;
 
-public class Task
+public class TaskEntity
 {
     public Guid Id { get; private set; }
     public Guid BoardColumnId { get; private set; }
@@ -20,9 +20,9 @@ public class Task
     public DateTime CreatedAt { get; private set; }
     public DateTime UpdatedAt { get; private set; }
 
-    private Task() { }
+    private TaskEntity() { }
 
-    public Task(
+    public TaskEntity(
         Guid boardColumnId,
         string title,
         string description,
