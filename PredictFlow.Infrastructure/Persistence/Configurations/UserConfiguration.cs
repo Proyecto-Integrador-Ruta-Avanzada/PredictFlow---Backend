@@ -46,6 +46,13 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .HasColumnName("role")
             .HasMaxLength(50)
             .IsRequired();
+        
+        builder.Property(u => u.RefreshToken)
+            .HasColumnName("refresh_token") // (Opcional) Asigna un nombre a la columna
+            .HasMaxLength(500); // Esto hace que la columna sea NVARCHAR(500) en la DB
+
+        builder.Property(u => u.RefreshTokenExpiryTime)
+            .HasColumnName("refresh_token_expiry_time"); // Usa el tipo de dato por defecto (datetime/datetime2)
 
         builder.Property(u => u.CreatedAt)
             .HasColumnName("created_at")

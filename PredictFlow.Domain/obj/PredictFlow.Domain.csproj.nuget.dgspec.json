@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {}
+    "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {}
   },
   "projects": {
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+    "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "projectUniqueName": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
         "projectName": "PredictFlow.Domain",
-        "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-        "packagesPath": "/home/walker-cohorte4/.nuget/packages/",
-        "outputPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/obj/",
+        "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "packagesPath": "/home/coders/.nuget/packages/",
+        "outputPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/walker-cohorte4/.nuget/NuGet/NuGet.Config"
+          "/home/coders/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
