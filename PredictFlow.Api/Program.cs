@@ -88,16 +88,6 @@ builder.Services.AddAuthorization();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// *Opcional: Si quieres añadir seguridad JWT a Swagger*
-// builder.Services.AddSwaggerGen(c =>
-// {
-//     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-//     {
-//         // ... (código para configurar Swagger para recibir Bearer Token)
-//     });
-// });
-
-
 var app = builder.Build();
 
 // 4. Configuración del pipeline (Middleware)
