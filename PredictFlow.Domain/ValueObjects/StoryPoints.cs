@@ -9,7 +9,7 @@ public record StoryPoints
         if (value < 0)
             throw new ArgumentException("Story points cannot be negative");
 
-        if (value > 100)
+        if (value > 5)
             throw new ArgumentException("Story points value is unrealistic");
 
         Value = value;

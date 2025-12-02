@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PredictFlow.Domain\PredictFlow.Domain.csproj" />
+    <ProjectReference Include="..\PredictFlow.Application\PredictFlow.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
