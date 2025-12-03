@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {}
+    "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj": {}
   },
   "projects": {
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {
+    "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj",
         "projectName": "PredictFlow.Api",
-        "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
-        "packagesPath": "/home/walker-cohorte4/.nuget/packages/",
-        "outputPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Api/obj/",
+        "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj",
+        "packagesPath": "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/walker-cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Jhon Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,11 +26,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
+                "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj"
               },
-              "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
-                "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
+              "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj"
               }
             }
           }
@@ -39,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -69,6 +75,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -77,21 +101,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+    "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj",
         "projectName": "PredictFlow.Application",
-        "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
-        "packagesPath": "/home/walker-cohorte4/.nuget/packages/",
-        "outputPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/obj/",
+        "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj",
+        "packagesPath": "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/walker-cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Jhon Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -103,8 +127,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
+                "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj"
               }
             }
           }
@@ -113,12 +137,22 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.Extensions.Options": {
               "target": "Package",
               "version": "[10.0.0, )"
@@ -143,26 +177,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+    "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj",
         "projectName": "PredictFlow.Domain",
-        "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-        "packagesPath": "/home/walker-cohorte4/.nuget/packages/",
-        "outputPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/obj/",
+        "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj",
+        "packagesPath": "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/walker-cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Jhon Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -180,7 +228,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -196,26 +250,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
+    "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
         "projectName": "PredictFlow.Infrastructure",
-        "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
-        "packagesPath": "/home/walker-cohorte4/.nuget/packages/",
-        "outputPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/walker-cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Jhon Sebastian\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -227,11 +295,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
+                "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj"
               },
-              "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
+                "projectPath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj"
               }
             }
           }
@@ -240,7 +308,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -262,12 +336,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

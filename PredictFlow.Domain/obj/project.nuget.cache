@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "YPU1WAKMVB8WEWzP1cRcW/+ZBknZUzEWRJBGy1SxeV41hdCmKwAttVIu4ZPY1f5ItKw74q3eQM8sV8dZUQyp/g==",
+  "dgSpecHash": "MAwNk5r9Hdo=",
   "success": true,
-  "projectFilePath": "/home/walker-cohorte4/test/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Jhon Sebastian\\OneDrive\\Escritorio\\C#\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\Jhon Sebastian\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
+  ],
   "logs": []
 }
