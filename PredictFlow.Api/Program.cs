@@ -11,12 +11,12 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 0. Cargar y Configurar JwtSettings
+// Cargar y Configurar JwtSettings
 // Mapea la sección "JwtSettings" del appsettings.json a la clase C# JwtSettings
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
-// 1. Registrar DbContext con MySQL (Aiven)
+// Registrar DbContext con MySQL (Aiven)
 builder.Services.AddDbContext<PredictFlowDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -30,7 +30,7 @@ builder.Services.AddDbContext<PredictFlowDbContext>(options =>
         });
 });
 
-// 2. Registrar repositorios y servicios de aplicación
+// Registrar repositorios y servicios de aplicación
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
@@ -43,7 +43,7 @@ builder.Services.AddScoped<ISprintRepository, SprintRepository>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AuthService>();
 
-// 2.5. Configuración de Autenticación JWT (NUEVO BLOQUE)
+// Configuración de Autenticación JWT (NUEVO BLOQUE)
 
 // Obtenemos las JwtSettings para configurar la validación del token
 var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
@@ -84,13 +84,13 @@ builder.Services.AddAuthentication(options =>
 // Agrega el servicio de Autorización.
 builder.Services.AddAuthorization();
 
-// 3. Swagger / OpenAPI
+// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 4. Configuración del pipeline (Middleware)
+// Configuración del pipeline (Middleware)
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -105,7 +105,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 4.5. Middlewares de Seguridad (DEBEN IR AQUÍ)
+// Middlewares de Seguridad (DEBEN IR AQUÍ)
 app.UseAuthentication(); 
 app.UseAuthorization(); 
 

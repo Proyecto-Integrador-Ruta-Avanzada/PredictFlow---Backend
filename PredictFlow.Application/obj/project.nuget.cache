@@ -1,18 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Z/SM/T8vN4UjZ8Igmk08pl87vAgJr8B93hT/pIOAz7OfCY6Lt2VjGSaxYyl0C6DjkTG7Xy/6w9+POKbmjSM6mQ==",
+  "dgSpecHash": "J1O20Nni7J0=",
   "success": true,
-  "projectFilePath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
+  "projectFilePath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
   "expectedPackageFiles": [
-    "/home/coders/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.extensions.options/10.0.0/microsoft.extensions.options.10.0.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.extensions.primitives/10.0.0/microsoft.extensions.primitives.10.0.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.identitymodel.abstractions/8.15.0/microsoft.identitymodel.abstractions.8.15.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.15.0/microsoft.identitymodel.jsonwebtokens.8.15.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.identitymodel.logging/8.15.0/microsoft.identitymodel.logging.8.15.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/microsoft.identitymodel.tokens/8.15.0/microsoft.identitymodel.tokens.8.15.0.nupkg.sha512",
-    "/home/coders/.nuget/packages/system.identitymodel.tokens.jwt/8.15.0/system.identitymodel.tokens.jwt.8.15.0.nupkg.sha512"
+    "/home/miguelzapata/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/home/miguelzapata/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
   ],
   "logs": []
 }

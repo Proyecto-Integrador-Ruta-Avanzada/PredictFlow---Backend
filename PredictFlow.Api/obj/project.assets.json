@@ -1609,19 +1609,19 @@
     ]
   },
   "packageFolders": {
-    "/home/coders/.nuget/packages/": {}
+    "/home/miguelzapata/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+      "projectUniqueName": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
       "projectName": "PredictFlow.Api",
-      "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
-      "packagesPath": "/home/coders/.nuget/packages/",
-      "outputPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Api/obj/",
+      "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+      "packagesPath": "/home/miguelzapata/.nuget/packages/",
+      "outputPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/coders/.nuget/NuGet/NuGet.Config"
+        "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1633,11 +1633,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-              "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+            "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+              "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
             },
-            "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
-              "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
+            "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
+              "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
             }
           }
         }
@@ -1646,7 +1646,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -1680,6 +1686,20 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
+            "version": "[8.0.21, 8.0.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.21, 8.0.21]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1688,7 +1708,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

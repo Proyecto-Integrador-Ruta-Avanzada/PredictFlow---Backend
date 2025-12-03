@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IOmWOWb0ub/x1hggslWuTNJpm6Z3bp2FwclKaiiMaKtFLiHOhUuERES3JM+TfxbpMD05n+4HV5tu0zu/L4gn0w==",
+  "dgSpecHash": "1sZxFs3W4X8=",
   "success": true,
-  "projectFilePath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/miguelzapata/.nuget/packages/microsoft.netcore.app.ref/8.0.21/microsoft.netcore.app.ref.8.0.21.nupkg.sha512",
+    "/home/miguelzapata/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.21/microsoft.aspnetcore.app.ref.8.0.21.nupkg.sha512"
+  ],
   "logs": []
 }
