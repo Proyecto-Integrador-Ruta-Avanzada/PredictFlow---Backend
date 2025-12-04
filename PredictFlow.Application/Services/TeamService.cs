@@ -3,6 +3,8 @@ using PredictFlow.Domain.Entities;
 using PredictFlow.Domain.Interfaces;
 using PredictFlow.Domain.ValueObjects;
 
+namespace PredictFlow.Application.Services;
+
 public class TeamService : ITeamService
 {
     private readonly ITeamRepository _teamRepository;
@@ -18,9 +20,9 @@ public class TeamService : ITeamService
     {
         var team = new Team(name);
 
-        // el owner se agrega como miembro automático
+        // el owner se agrega como miembro automático   
         var owner = await _userRepository.GetByIdAsync(ownerId)
-            ?? throw new Exception("El usuario dueño no existe");
+                    ?? throw new Exception("El usuario dueño no existe");
 
         var ownerMember = new TeamMember(team.Id, ownerId, TeamRole.Lead, "", 100);
         await _teamRepository.AddMemberAsync(ownerMember);
@@ -43,7 +45,7 @@ public class TeamService : ITeamService
     public async Task<IEnumerable<TeamMember>> GetMembersAsync(Guid teamId)
     {
         var team = await _teamRepository.GetByIdAsync(teamId)
-            ?? throw new Exception("Team no encontrado");
+                   ?? throw new Exception("Team no encontrado");
 
         return team.Members;
     }
@@ -51,7 +53,7 @@ public class TeamService : ITeamService
     public async Task AddMemberAsync(Guid teamId, Guid userId, TeamRole role, string skills, int availability)
     {
         var user = await _userRepository.GetByIdAsync(userId)
-            ?? throw new Exception("El usuario no existe");
+                   ?? throw new Exception("El usuario no existe");
 
         // Verificar si ya existe
         var existing = await _teamRepository.GetMemberAsync(teamId, userId);
@@ -71,7 +73,7 @@ public class TeamService : ITeamService
     public async Task UpdateMemberRoleAsync(Guid teamId, Guid userId, TeamRole newRole)
     {
         var member = await _teamRepository.GetMemberAsync(teamId, userId)
-            ?? throw new Exception("Miembro no encontrado");
+                     ?? throw new Exception("Miembro no encontrado");
 
         member.UpdateRole(newRole);
 
@@ -81,7 +83,7 @@ public class TeamService : ITeamService
     public async Task UpdateMemberSkillsAsync(Guid teamId, Guid userId, string newSkills)
     {
         var member = await _teamRepository.GetMemberAsync(teamId, userId)
-            ?? throw new Exception("Miembro no encontrado");
+                     ?? throw new Exception("Miembro no encontrado");
 
         member.UpdateSkills(newSkills);
 
@@ -91,7 +93,7 @@ public class TeamService : ITeamService
     public async Task UpdateMemberAvailabilityAsync(Guid teamId, Guid userId, int newAvailability)
     {
         var member = await _teamRepository.GetMemberAsync(teamId, userId)
-            ?? throw new Exception("Miembro no encontrado");
+                     ?? throw new Exception("Miembro no encontrado");
 
         member.UpdateAvailability(newAvailability);
 
