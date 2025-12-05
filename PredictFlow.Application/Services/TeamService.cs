@@ -100,4 +100,10 @@ public class TeamService : ITeamService
         var member = await _teamRepository.GetMemberAsync(teamId, userId);
         return member != null;
     }
+    
+    public async Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId)
+    {
+        return await _teamRepository.GetMemberAsync(teamId, userId);
+    }
+
 }

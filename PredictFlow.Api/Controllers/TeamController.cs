@@ -113,12 +113,12 @@ public class TeamController : ControllerBase
     [HttpPut("{teamId:guid}/members/{userId:guid}/workload")]
     public async Task<IActionResult> UpdateWorkload(Guid teamId, Guid userId, [FromBody] UpdateWorkloadDto dto)
     {
-        var member = await _teamService.(teamId, userId);
+        var member = await _teamService.UpdateMemberWorkloadAsync(teamId, userId);
 
         if (member == null)
             return NotFound("Miembro no encontrado");
 
-        member.UpdateWorkload(dto.Workload);
+        member.UpdateWorkload(dto.Workload);    
 
         await _teamService.UpdateMemberAvailabilityAsync(teamId, userId, member.Availability);
 

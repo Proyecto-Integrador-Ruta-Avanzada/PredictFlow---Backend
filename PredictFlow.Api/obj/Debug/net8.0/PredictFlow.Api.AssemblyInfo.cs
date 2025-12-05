@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PredictFlow.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c7a26e1a82120973273585d0cb0582d5826cc00")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+20336e73c8dc015c8d7c1d7042100841b0549e62")]
 [assembly: System.Reflection.AssemblyProductAttribute("PredictFlow.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PredictFlow.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

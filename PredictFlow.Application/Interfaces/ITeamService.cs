@@ -20,4 +20,7 @@ public interface ITeamService
     
     Task UpdateMemberWorkloadAsync(Guid teamId, Guid userId, int newWorkload);
     Task<bool> UserIsTeamMemberAsync(Guid teamId, Guid userId);
+    
+    Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId);
+
 }

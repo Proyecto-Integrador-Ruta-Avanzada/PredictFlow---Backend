@@ -1,36 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {}
+    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {}
   },
   "projects": {
-    "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {
+    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
         "projectName": "PredictFlow.Api",
-        "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
-        "packagesPath": "/home/miguelzapata/.nuget/packages/",
-        "outputPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Api/obj/",
+        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+        "packagesPath": "/home/cohorte4/.nuget/packages/",
+        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
+          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
               },
-              "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
-                "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
+              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
+                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
               }
             }
           }
@@ -45,7 +46,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -82,15 +83,15 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -101,34 +102,35 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
+        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
         "projectName": "PredictFlow.Application",
-        "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
-        "packagesPath": "/home/miguelzapata/.nuget/packages/",
-        "outputPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/obj/",
+        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
+        "packagesPath": "/home/cohorte4/.nuget/packages/",
+        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
+          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
               }
             }
           }
@@ -143,7 +145,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -176,11 +178,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -188,26 +190,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
         "projectName": "PredictFlow.Domain",
-        "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-        "packagesPath": "/home/miguelzapata/.nuget/packages/",
-        "outputPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/obj/",
+        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "packagesPath": "/home/cohorte4/.nuget/packages/",
+        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
+          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -226,7 +229,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -245,11 +248,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -257,37 +260,38 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
+    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
+        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
         "projectName": "PredictFlow.Infrastructure",
-        "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
-        "packagesPath": "/home/miguelzapata/.nuget/packages/",
-        "outputPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Infrastructure/obj/",
+        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
+        "packagesPath": "/home/cohorte4/.nuget/packages/",
+        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
+          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
               },
-              "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/miguelzapata/Música/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
               }
             }
           }
@@ -302,7 +306,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -327,11 +331,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.21, 8.0.21]"
+              "version": "[8.0.22, 8.0.22]"
             }
           ],
           "frameworkReferences": {
@@ -339,7 +343,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
