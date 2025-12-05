@@ -32,4 +32,19 @@ public class TeamMember
     {
         Workload = value;
     }
+    
+    public void UpdateRole(TeamRole newRole)
+    {
+        Role = newRole;
+    }
+
+    public void UpdateSkills(string newSkills)
+    {
+        Skills = newSkills;
+    }
+
+    public void UpdateAvailability(int newAvailability)
+    {
+        Availability = newAvailability;
+    }
 }

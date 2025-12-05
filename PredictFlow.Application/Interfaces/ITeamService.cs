@@ -18,5 +18,6 @@ public interface ITeamService
     Task UpdateMemberSkillsAsync(Guid teamId, Guid userId, string newSkills);
     Task UpdateMemberAvailabilityAsync(Guid teamId, Guid userId, int newAvailability);
     
-    Task<bool> UserIsTeamMemberAsync(Guid userId, Guid teamId);
+    Task UpdateMemberWorkloadAsync(Guid teamId, Guid userId, int newWorkload);
+    Task<bool> UserIsTeamMemberAsync(Guid teamId, Guid userId);
 }

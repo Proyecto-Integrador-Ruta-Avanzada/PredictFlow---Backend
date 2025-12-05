@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PredictFlow.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5df08b427d3b0be1e88c8a86c32feee556131fc6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c7a26e1a82120973273585d0cb0582d5826cc00")]
 [assembly: System.Reflection.AssemblyProductAttribute("PredictFlow.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PredictFlow.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
