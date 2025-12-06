@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc;
 using PredictFlow.Application.DTOs;
 using PredictFlow.Application.DTOs.TeamMember;
 using PredictFlow.Application.Interfaces;
-using PredictFlow.Domain.Entities;
 
 namespace PredictFlow.Api.Controllers;
 
@@ -20,14 +19,16 @@ public class TeamController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTeam([FromBody] CreateTeamRequestDto dto)
     {
-        var ownerId = Guid.Parse("00000000-0000-0000-0000-00000000001");
-        
+        // TODO: Reemplazar por userId real del token
+        var ownerId = Guid.Parse("00000000-0000-0000-0000-000000000001");
+
         var team = await _teamService.CreateTeamAsync(dto.Name, ownerId);
-        return Ok(new
+
+        return Ok(new TeamResponseDto
         {
-            team.Id,
-            team.Name,
-            team.CreatedAt
+            Id = team.Id,
+            Name = team.Name,
+            CreatedAt = team.CreatedAt
         });
     }
 
@@ -35,36 +36,29 @@ public class TeamController : ControllerBase
     public async Task<IActionResult> GetTeam(Guid teamId)
     {
         var team = await _teamService.GetTeamAsync(teamId);
-        if (team == null)
-            return NotFound("Equipo no encontrado");
-        
-        return Ok(team);
+
+        return team == null ? NotFound("Team no encontrado") : Ok(team);
     }
 
-    [HttpGet("{teamId:guid}/members")]
-    public async Task<IActionResult> GetTeamForUser(Guid userId)
+    [HttpGet("user/{userId:guid}")]
+    public async Task<IActionResult> GetTeamsForUser(Guid userId)
     {
         var teams = await _teamService.GetTeamsForUserAsync(userId);
-        if (teams == null)
-            return NotFound("No encontrado");
-        
         return Ok(teams);
     }
 
-    [HttpGet("{team:guid}/members")]
+    [HttpGet("{teamId:guid}/members")]
     public async Task<IActionResult> GetMembers(Guid teamId)
     {
         var members = await _teamService.GetMembersAsync(teamId);
-        if (members == null)
-            return NotFound("No hay usuarios ingresados");
 
-        return Ok(members.Select(m => new
+        return Ok(members.Select(m => new TeamMemberResponseDto
         {
-            m.UserId,
-            m.Role,
-            m.Skills,
-            m.Availability
-            m.Workload
+            UserId = m.UserId,
+            Role = m.Role,
+            Skills = m.Skills,
+            Availability = m.Availability,
+            Workload = m.Workload
         }));
     }
 
@@ -86,21 +80,28 @@ public class TeamController : ControllerBase
     public async Task<IActionResult> UpdateRole(Guid teamId, Guid userId, [FromBody] UpdateRoleDto dto)
     {
         await _teamService.UpdateMemberRoleAsync(teamId, userId, dto.Role);
-        return Ok("Rol Actualizado");
+        return Ok("Rol actualizado");
     }
 
-    [HttpPut("{teamId:guid}/members/{userId:guid}/skills}")]
+    [HttpPut("{teamId:guid}/members/{userId:guid}/skills")]
     public async Task<IActionResult> UpdateSkills(Guid teamId, Guid userId, [FromBody] UpdateSkillsDto dto)
     {
         await _teamService.UpdateMemberSkillsAsync(teamId, userId, dto.Skills);
-        return Ok("Habilidades Actualizadas");
+        return Ok("Skills actualizadas");
     }
-    
+
     [HttpPut("{teamId:guid}/members/{userId:guid}/availability")]
     public async Task<IActionResult> UpdateAvailability(Guid teamId, Guid userId, [FromBody] UpdateAvailabilityDto dto)
     {
         await _teamService.UpdateMemberAvailabilityAsync(teamId, userId, dto.Availability);
-        return Ok("Disponibilidad actualizada");
+        return Ok("Availability actualizada");
+    }
+
+    [HttpPut("{teamId:guid}/members/{userId:guid}/workload")]
+    public async Task<IActionResult> UpdateWorkload(Guid teamId, Guid userId, [FromBody] UpdateWorkloadDto dto)
+    {
+        await _teamService.UpdateMemberWorkloadAsync(teamId, userId, dto.Workload);
+        return Ok("Workload actualizado");
     }
     
     [HttpGet("{teamId:guid}/members/{userId:guid}/exists")]
@@ -108,20 +109,5 @@ public class TeamController : ControllerBase
     {
         var result = await _teamService.UserIsTeamMemberAsync(teamId, userId);
         return Ok(new { isMember = result });
-    }
-    
-    [HttpPut("{teamId:guid}/members/{userId:guid}/workload")]
-    public async Task<IActionResult> UpdateWorkload(Guid teamId, Guid userId, [FromBody] UpdateWorkloadDto dto)
-    {
-        var member = await _teamService.UpdateMemberWorkloadAsync(teamId, userId);
-
-        if (member == null)
-            return NotFound("Miembro no encontrado");
-
-        member.UpdateWorkload(dto.Workload);    
-
-        await _teamService.UpdateMemberAvailabilityAsync(teamId, userId, member.Availability);
-
-        return Ok("Workload actualizado");
     }
 }

@@ -1,37 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {}
+    "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj": {}
   },
   "projects": {
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj": {
+    "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
+        "projectUniqueName": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj",
         "projectName": "PredictFlow.Api",
-        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/PredictFlow.Api.csproj",
-        "packagesPath": "/home/cohorte4/.nuget/packages/",
-        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Api/obj/",
+        "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Api\\PredictFlow.Api.csproj",
+        "packagesPath": "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniela o cualquiera\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
+                "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj"
               },
-              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
-                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj"
+              "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj"
               }
             }
           }
@@ -45,8 +44,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -80,20 +78,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -102,35 +86,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
+    "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj",
         "projectName": "PredictFlow.Application",
-        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj",
-        "packagesPath": "/home/cohorte4/.nuget/packages/",
-        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/obj/",
+        "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj",
+        "packagesPath": "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniela o cualquiera\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
+                "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj"
               }
             }
           }
@@ -144,8 +127,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -175,42 +157,31 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+    "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj",
         "projectName": "PredictFlow.Domain",
-        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-        "packagesPath": "/home/cohorte4/.nuget/packages/",
-        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/obj/",
+        "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj",
+        "packagesPath": "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniela o cualquiera\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -228,8 +199,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -245,53 +215,42 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj": {
+    "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
         "projectName": "PredictFlow.Infrastructure",
-        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
-        "packagesPath": "/home/cohorte4/.nuget/packages/",
-        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Daniela o cualquiera\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+              "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
+                "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj"
               },
-              "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-                "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+              "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
+                "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj"
               }
             }
           }
@@ -305,8 +264,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -328,22 +286,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

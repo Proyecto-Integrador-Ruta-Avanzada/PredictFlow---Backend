@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {}
+    "/home/miguelzapata/Imágenes/PredictFlow - Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {}
   },
   "projects": {
-    "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
+    "/home/miguelzapata/Imágenes/PredictFlow - Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "projectUniqueName": "/home/miguelzapata/Imágenes/PredictFlow - Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
         "projectName": "PredictFlow.Domain",
-        "projectPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
-        "packagesPath": "/home/cohorte4/.nuget/packages/",
-        "outputPath": "/home/cohorte4/Imágenes/PredictFlow---Backend/PredictFlow.Domain/obj/",
+        "projectPath": "/home/miguelzapata/Imágenes/PredictFlow - Backend/PredictFlow.Domain/PredictFlow.Domain.csproj",
+        "packagesPath": "/home/miguelzapata/.nuget/packages/",
+        "outputPath": "/home/miguelzapata/Imágenes/PredictFlow - Backend/PredictFlow.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/cohorte4/.nuget/NuGet/NuGet.Config"
+          "/home/miguelzapata/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/usr/lib/dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -58,11 +57,11 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.21, 8.0.21]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
+              "version": "[8.0.21, 8.0.21]"
             }
           ],
           "frameworkReferences": {
@@ -70,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/miguelzapata/.dotnet/sdk/9.0.306/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
