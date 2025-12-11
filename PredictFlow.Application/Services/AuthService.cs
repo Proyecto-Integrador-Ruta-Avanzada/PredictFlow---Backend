@@ -4,6 +4,7 @@ using PredictFlow.Domain.Entities;
 using PredictFlow.Domain.Interfaces;
 using PredictFlow.Domain.ValueObjects; // Necesario para el Email VO
 using BCrypt.Net;
+using System;
 
 namespace PredictFlow.Application.Services;
 
@@ -18,6 +19,7 @@ public class AuthService : IAuthService
         _tokenService = tokenService;
     }
 
+    // Método de Registro
     public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto)
     {
         // 1. Validar si el usuario ya existe
@@ -53,6 +55,7 @@ public class AuthService : IAuthService
         };
     }
 
+    // Método de Login
     public async Task<AuthResponseDto> LoginAsync(LoginDto dto)
     {
         // 1. Buscar usuario
@@ -78,5 +81,20 @@ public class AuthService : IAuthService
             Email = user.Email.Value,
             Name = user.Name
         };
+    }
+
+    // Método de Generación de Access Token y Refresh Token
+    public async Task<(string accessToken, string refreshToken)> GenerateTokens(User user)
+    {
+        var accessToken = _tokenService.GenerateAccessToken(user.Id, user.Email.Value, user.Name);
+        var refreshToken = _tokenService.GenerateRefreshToken();
+
+        user.RefreshToken = refreshToken;
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
+
+        // Actualizamos el usuario con el nuevo RefreshToken
+        await _userRepository.UpdateAsync(user);
+
+        return (accessToken, refreshToken);
     }
 }
