@@ -1003,19 +1003,19 @@
     ]
   },
   "packageFolders": {
-    "/home/coders/.nuget/packages/": {}
+    "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
       "projectName": "PredictFlow.Infrastructure",
-      "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj",
-      "packagesPath": "/home/coders/.nuget/packages/",
-      "outputPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Infrastructure/obj/",
+      "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\PredictFlow.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\Daniela o cualquiera\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/coders/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Daniela o cualquiera\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1027,11 +1027,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj": {
-              "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Application/PredictFlow.Application.csproj"
+            "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj": {
+              "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Application\\PredictFlow.Application.csproj"
             },
-            "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj": {
-              "projectPath": "/home/coders/Escritorio/CSharp/PredictFlow---Backend/PredictFlow.Domain/PredictFlow.Domain.csproj"
+            "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj": {
+              "projectPath": "C:\\Users\\Daniela o cualquiera\\OneDrive\\Documentos\\Miguel\\CSharp Modulo 6\\PredictFlow---Backend\\PredictFlow.Domain\\PredictFlow.Domain.csproj"
             }
           }
         }
@@ -1040,6 +1040,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -1067,7 +1072,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

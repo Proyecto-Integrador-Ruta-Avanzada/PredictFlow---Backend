@@ -5,12 +5,8 @@ namespace PredictFlow.Infrastructure.Persistence;
 
 public class PredictFlowDbContext : DbContext
 {
-    public PredictFlowDbContext(DbContextOptions<PredictFlowDbContext> options)
-        : base(options)
-    {
-    }
-
-    // DbSets
+    public PredictFlowDbContext(DbContextOptions<PredictFlowDbContext> options) : base(options) { }
+    
     public DbSet<User> Users => Set<User>();
     public DbSet<Project> Projects => Set<Project>();
     public DbSet<TaskEntity> Tasks => Set<TaskEntity>();
