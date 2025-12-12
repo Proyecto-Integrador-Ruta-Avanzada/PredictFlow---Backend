@@ -1,4 +1,10 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using PredictFlow.Application.Interfaces;
+using PredictFlow.Application.Services;
+using PredictFlow.Application.Settings;
 using PredictFlow.Infrastructure.Persistence;
 using PredictFlow.Infrastructure.Persistence.Repositories;
 using PredictFlow.Domain.Interfaces;
