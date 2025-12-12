@@ -2,12 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using PredictFlow.Infrastructure.Persistence;
 using PredictFlow.Infrastructure.Persistence.Repositories;
 using PredictFlow.Domain.Interfaces;
-using PredictFlow.Application.Interfaces;
-using PredictFlow.Application.Services;
-using PredictFlow.Application.Settings; 
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;             
-using System.Text;                                
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
-// Registrar DbContext con MySQL (Aiven)
+// ---------------------------------------------------------
+// 1. Registrar DbContext con MySQL (Aiven)
+// ---------------------------------------------------------
 builder.Services.AddDbContext<PredictFlowDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -30,7 +26,9 @@ builder.Services.AddDbContext<PredictFlowDbContext>(options =>
         });
 });
 
-// Registrar repositorios y servicios de aplicación
+// ---------------------------------------------------------
+// 2. Registrar repositorios
+// ---------------------------------------------------------
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
@@ -84,13 +82,17 @@ builder.Services.AddAuthentication(options =>
 // Agrega el servicio de Autorización.
 builder.Services.AddAuthorization();
 
-// Swagger / OpenAPI
+// ---------------------------------------------------------
+// 3. Swagger / OpenAPI
+// ---------------------------------------------------------
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configuración del pipeline (Middleware)
+// ---------------------------------------------------------
+// 4. Configuración del pipeline
+// ---------------------------------------------------------
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -110,4 +112,6 @@ app.UseAuthentication();
 app.UseAuthorization(); 
 
 // (A futuro: aquí irán tus endpoints reales)
+
+// ---------------------------------------------------------
 app.Run();
