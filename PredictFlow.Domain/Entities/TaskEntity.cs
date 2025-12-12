@@ -20,6 +20,11 @@ public class TaskEntity
     public DateTime CreatedAt { get; private set; }
     public DateTime UpdatedAt { get; private set; }
 
+    public int EstimatedHours { get; private set; }
+    public int? ActualHours { get; private set; }
+
+    public List<Guid> Dependencies { get; private set; } = new();
+
     private TaskEntity() { }
 
     public TaskEntity(
@@ -29,7 +34,8 @@ public class TaskEntity
         Guid createdBy,
         Guid assignedTo,
         Priority priority,
-        StoryPoints storyPoints
+        StoryPoints storyPoints,
+        int estimatedHours
     )
     {
         Id = Guid.NewGuid();
@@ -40,6 +46,7 @@ public class TaskEntity
         AssignedTo = assignedTo;
         Priority = priority;
         StoryPoints = storyPoints;
+        EstimatedHours = estimatedHours;
         State = TaskState.Todo;
         CreatedAt = DateTime.UtcNow;
         UpdatedAt = DateTime.UtcNow;
@@ -55,5 +62,23 @@ public class TaskEntity
     {
         State = status;
         UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void UpdateActualHours(int hours)
+    {
+        ActualHours = hours;
+        UpdatedAt = DateTime.UtcNow;
+    }
+
+    public void AddDependency(Guid taskId)
+    {
+        if (!Dependencies.Contains(taskId))
+            Dependencies.Add(taskId);
+    }
+
+    public void RemoveDependency(Guid taskId)
+    {
+        if (Dependencies.Contains(taskId))
+            Dependencies.Remove(taskId);
     }
 }

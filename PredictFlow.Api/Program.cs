@@ -5,6 +5,11 @@ using PredictFlow.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Cargar y Configurar JwtSettings
+// Mapea la sección "JwtSettings" del appsettings.json a la clase C# JwtSettings
+builder.Services.Configure<JwtSettings>(
+    builder.Configuration.GetSection("JwtSettings"));
+
 // ---------------------------------------------------------
 // 1. Registrar DbContext con MySQL (Aiven)
 // ---------------------------------------------------------
@@ -32,6 +37,51 @@ builder.Services.AddScoped<IBoardColumnRepository, BoardColumnRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ISprintRepository, SprintRepository>();
 
+// Servicios de Autenticación
+builder.Services.AddScoped<ITokenService, TokenService>();
+builder.Services.AddScoped<AuthService>();
+
+// Configuración de Autenticación JWT (NUEVO BLOQUE)
+
+// Obtenemos las JwtSettings para configurar la validación del token
+var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+
+// Configura el esquema de Autenticación JWT Bearer
+builder.Services.AddAuthentication(options =>
+{
+    // Define JWT Bearer como el esquema por defecto para autenticar y responder a desafíos
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false; // Deshabilitar solo en desarrollo (por simplicidad)
+    options.SaveToken = true;
+    
+    // Parámetros de Validación (CRUCIALES)
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        // La clave secreta debe ser leída en formato byte
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings!.SecretKey)),
+        
+        ValidateIssuer = true,
+        ValidIssuer = jwtSettings.Issuer,
+        
+        ValidateAudience = true,
+        ValidAudience = jwtSettings.Audience,
+        
+        // No permite tolerancia de tiempo de reloj (ClockSkew)
+        ClockSkew = TimeSpan.Zero,
+        
+        // Valida que el token no haya expirado
+        ValidateLifetime = true 
+    };
+});
+
+// Agrega el servicio de Autorización.
+builder.Services.AddAuthorization();
+
 // ---------------------------------------------------------
 // 3. Swagger / OpenAPI
 // ---------------------------------------------------------
@@ -56,6 +106,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Middlewares de Seguridad (DEBEN IR AQUÍ)
+app.UseAuthentication(); 
+app.UseAuthorization(); 
 
 // (A futuro: aquí irán tus endpoints reales)
 

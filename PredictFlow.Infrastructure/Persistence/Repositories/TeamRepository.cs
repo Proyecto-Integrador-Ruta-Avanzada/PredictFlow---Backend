@@ -17,7 +17,7 @@ public class TeamRepository : ITeamRepository
     {
         return await _context.Teams
             .Include(t => t.Members)
-            .AsNoTracking()
+            .ThenInclude(m => m.User)
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
@@ -25,7 +25,7 @@ public class TeamRepository : ITeamRepository
     {
         return await _context.Teams
             .Include(t => t.Members)
-            .AsNoTracking()
+            .ThenInclude(m => m.User)
             .ToListAsync();
     }
 
@@ -33,23 +33,16 @@ public class TeamRepository : ITeamRepository
     {
         return await _context.Teams
             .Include(t => t.Members)
+            .ThenInclude(m => m.User)
             .Where(t => t.Members.Any(m => m.UserId == userId))
-            .AsNoTracking()
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<User>> GetMemberAsync(Guid teamId)
+    public async Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId)
     {
         return await _context.TeamMembers
-            .Where(m => m.TeamId == teamId)
-            .Join(
-                _context.Users,
-                member => member.UserId,
-                user => user.Id,
-                (member, user) => user
-            )
-            .AsNoTracking()
-            .ToListAsync();
+            .Include(m => m.User)
+            .FirstOrDefaultAsync(m => m.TeamId == teamId && m.UserId == userId);
     }
 
     public async Task AddAsync(Team team)
@@ -57,10 +50,34 @@ public class TeamRepository : ITeamRepository
         await _context.Teams.AddAsync(team);
         await _context.SaveChangesAsync();
     }
-
+    
     public async Task UpdateAsync(Team team)
     {
         _context.Teams.Update(team);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task AddMemberAsync(TeamMember member)
+    {
+        await _context.TeamMembers.AddAsync(member);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task UpdateMemberAsync(TeamMember member)
+    {
+        _context.TeamMembers.Update(member);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task RemoveMemberAsync(Guid teamId, Guid userId)
+    {
+        var entity = await _context.TeamMembers
+            .FirstOrDefaultAsync(m => m.TeamId == teamId && m.UserId == userId);
+
+        if (entity != null)
+        {
+            _context.TeamMembers.Remove(entity);
+            await _context.SaveChangesAsync();
+        }
     }
 }
