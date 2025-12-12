@@ -15,12 +15,12 @@ public class TeamInvitation
     
     private TeamInvitation(){} //Constructor para EF
 
-    public TeamInvitation(Guid teamId, Guid invitedByUserId, string code, Email invitedUserEmail)
+    public TeamInvitation(Guid teamId, Guid invitedByUserId, string code, string invitedUserEmail)
     {
         TeamId = teamId;
         InvitedByUserId = invitedByUserId;
         Code = code;
-        InvitedUserEmail = invitedUserEmail;
+        InvitedUserEmail = new Email(invitedUserEmail);
         Status = InvitationStatus.Pending;
         ExpiresAtUtc = DateTime.UtcNow.AddDays(7);
     }

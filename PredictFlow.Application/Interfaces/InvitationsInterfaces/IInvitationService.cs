@@ -6,5 +6,5 @@ public interface IInvitationService
 {
     public Task InviteMember(InviteMemberRequestDto inviteMemberRequestDto);
     public Task<InvitationValidateResultDto> ValidateInvitation(string code, string email);
-    public Task<AcceptInvitationResultDto>  AcceptInvitation(string code, string email);
+    public Task<AcceptInvitationResultDto>  AcceptInvitation(string code);
 }
