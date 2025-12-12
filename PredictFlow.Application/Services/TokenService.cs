@@ -46,4 +46,11 @@ public class TokenService : ITokenService
         var bytes = RandomNumberGenerator.GetBytes(64);
         return Convert.ToBase64String(bytes);
     }
+
+    public string GenerateInvitationCode(int length = 48)
+    {
+        var bytes = RandomNumberGenerator.GetBytes(length);
+        return Convert.ToBase64String(bytes)
+            .Replace("/", "").Replace("+", "").Replace("=", "");
+    }
 }

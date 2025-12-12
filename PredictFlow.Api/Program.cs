@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PredictFlow.Application.Interfaces;
+using PredictFlow.Application.Interfaces.ExternalConnection;
+using PredictFlow.Application.Interfaces.InvitationsInterfaces;
 using PredictFlow.Application.Services;
 using PredictFlow.Application.Settings;
 using PredictFlow.Infrastructure.Persistence;
@@ -42,10 +44,14 @@ builder.Services.AddScoped<IBoardRepository, BoardRepository>();
 builder.Services.AddScoped<IBoardColumnRepository, BoardColumnRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ISprintRepository, SprintRepository>();
+builder.Services.AddScoped<IInvitationsRepository, TeamInvitationRepository>();
 
 // Servicios de Autenticación
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IInvitationService, InvitationsService>();
+builder.Services.AddScoped<IN8nWebhookService, N8nWebhookService>();
+builder.Services.AddScoped<IInvitationLinkGenerator, InvitationLinkGenerator>();
 
 // Configuración de Autenticación JWT (NUEVO BLOQUE)
 
@@ -99,8 +105,7 @@ var app = builder.Build();
 // ---------------------------------------------------------
 // 4. Configuración del pipeline
 // ---------------------------------------------------------
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
 
     // Hacer que Swagger abra directamente en "/"
@@ -109,7 +114,7 @@ if (app.Environment.IsDevelopment())
         options.SwaggerEndpoint("/swagger/v1/swagger.json", "PredictFlow API v1");
         options.RoutePrefix = string.Empty; //  hace que swagger sea la página inicial
     });
-}
+
 
 app.UseHttpsRedirection();
 
