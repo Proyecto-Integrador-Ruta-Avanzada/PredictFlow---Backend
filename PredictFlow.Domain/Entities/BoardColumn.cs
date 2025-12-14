@@ -13,9 +13,25 @@ public class BoardColumn
 
     public BoardColumn(Guid boardId, string name, int position)
     {
+        if (boardId == Guid.Empty) throw new ArgumentException("BoardId is required.", nameof(boardId));
+        if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name is required.", nameof(name));
+        if (position < 0) throw new ArgumentOutOfRangeException(nameof(position), "Position cannot be negative.");
+
         Id = Guid.NewGuid();
         BoardId = boardId;
-        Name = name;
+        Name = name.Trim();
+        Position = position;
+    }
+
+    public void Rename(string name)
+    {
+        if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name is required.", nameof(name));
+        Name = name.Trim();
+    }
+
+    public void Reposition(int position)
+    {
+        if (position < 0) throw new ArgumentOutOfRangeException(nameof(position), "Position cannot be negative.");
         Position = position;
     }
 }

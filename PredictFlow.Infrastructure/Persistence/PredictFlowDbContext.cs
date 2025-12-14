@@ -17,6 +17,8 @@ public class PredictFlowDbContext : DbContext
     public DbSet<BoardColumn> BoardColumns => Set<BoardColumn>();
     public DbSet<SprintTask> SprintTasks => Set<SprintTask>();
     public DbSet<TeamInvitation> Invitations => Set<TeamInvitation>();
+    public DbSet<TaskDependency> TaskDependencies => Set<TaskDependency>();
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
