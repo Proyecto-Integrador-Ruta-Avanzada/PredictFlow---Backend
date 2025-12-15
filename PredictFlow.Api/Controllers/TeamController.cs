@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Mvc;
 using PredictFlow.Application.DTOs;
 using PredictFlow.Application.DTOs.TeamMember;
@@ -19,8 +20,7 @@ public class TeamController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTeam([FromBody] CreateTeamRequestDto dto)
     {
-        // TODO: Reemplazar por userId real del token
-        var ownerId = Guid.Parse("00000000-0000-0000-0000-000000000001");
+        var ownerId = Guid.Parse(User.FindFirst(JwtRegisteredClaimNames.Sub)!.Value);
 
         var team = await _teamService.CreateTeamAsync(dto.Name, ownerId);
 

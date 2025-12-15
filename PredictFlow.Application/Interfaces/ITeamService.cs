@@ -9,7 +9,7 @@ public interface ITeamService
     
     Task<Team?> GetTeamAsync(Guid teamId);
     Task<IEnumerable<Team>> GetTeamsForUserAsync(Guid userId);
-    Task<IEnumerable<TeamMember>> GetMembersAsync(Guid teamId);
+    Task<IEnumerable<TeamMember>> GetMembersAsync(Guid teamId); 
     
     Task AddMemberAsync(Guid teamId, Guid userId, TeamRole role, string skills, int availability);
     Task RemoveMemberAsync(Guid teamId, Guid userId);
@@ -20,7 +20,4 @@ public interface ITeamService
     
     Task UpdateMemberWorkloadAsync(Guid teamId, Guid userId, int newWorkload);
     Task<bool> UserIsTeamMemberAsync(Guid teamId, Guid userId);
-    
-    Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId);
-
 }

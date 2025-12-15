@@ -37,14 +37,7 @@ public class TeamRepository : ITeamRepository
             .Where(t => t.Members.Any(m => m.UserId == userId))
             .ToListAsync();
     }
-
-    public async Task<List<Team>> GetTeamsByUserIdAsync(Guid userId)
-    {
-        return await _context.Teams
-            .Include(t => t.Members)
-            .Where(t => t.Members.Any(m => m.UserId == userId))
-            .ToListAsync();
-    }
+    
     public async Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId)
     {
         return await _context.TeamMembers
