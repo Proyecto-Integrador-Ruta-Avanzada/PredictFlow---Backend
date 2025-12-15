@@ -22,7 +22,7 @@ public class TaskService : ITaskService
   
     // CREATE TASK
 
-    public async Task<TaskResponseDto> CreateAsync(CreateTaskRequestDto dto)
+    public async Task<TaskResponseDto> CreateAsync(Guid currentUserId, CreateTaskRequestDto dto)
     {
         if (dto.BoardColumnId == Guid.Empty)
             throw new ArgumentException("BoardColumnId is required.");
@@ -32,10 +32,7 @@ public class TaskService : ITaskService
 
         if (string.IsNullOrWhiteSpace(dto.Description))
             throw new ArgumentException("Description is required.");
-
-        if (dto.CreatedBy == Guid.Empty)
-            throw new ArgumentException("CreatedBy is required.");
-
+        
         if (dto.AssignedTo == Guid.Empty)
             throw new ArgumentException("AssignedTo is required.");
 
@@ -56,12 +53,13 @@ public class TaskService : ITaskService
             dto.BoardColumnId,
             dto.Title.Trim(),
             dto.Description.Trim(),
-            dto.CreatedBy,
-            dto.AssignedTo,
+            currentUserId,   
+            dto.AssignedTo,     
             priority,
             storyPoints,
             dto.EstimatedHours
         );
+
 
         await _taskRepository.AddAsync(task);
         return Map(task);
