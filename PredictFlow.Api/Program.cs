@@ -10,13 +10,14 @@ using PredictFlow.Application.Settings;
 using PredictFlow.Infrastructure.Persistence;
 using PredictFlow.Infrastructure.Persistence.Repositories;
 using PredictFlow.Domain.Interfaces;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
-// 1. Registrar DbContext con MySQL (Aiven)
+// Registrar DbContext con MySQL (Aiven)
 builder.Services.AddDbContext<PredictFlowDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -30,7 +31,7 @@ builder.Services.AddDbContext<PredictFlowDbContext>(options =>
         });
 });
 
-// 2. Registrar repositorios
+// Registrar repositorios
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
@@ -71,17 +72,7 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
 .AddJwtBearer(options =>
-{builder.Services.AddScoped<ISprintTaskService, SprintTaskService>();
-builder.Services.AddScoped<IInvitationLinkGenerator,InvitationLinkGenerator>();
-builder.Services.AddHttpClient<IN8nWebhookService, N8nWebhookService>();
-builder.Services.AddScoped<IInvitationService, InvitationsService>();
-builder.Services.AddScoped<IBoardColumnService, BoardColumnService>();
-builder.Services.AddScoped<IBoardService, BoardService>();
-builder.Services.AddScoped<IProjectService, ProjectService>();
-builder.Services.AddScoped<ITaskService, TaskService>();
-builder.Services.AddScoped<ISprintService, SprintService>();
-builder.Services.AddScoped<IRiskService, RiskService>();
-builder.Services.AddScoped<ITeamService, TeamService>();
+{
     options.RequireHttpsMetadata = false; // Deshabilitar solo en desarrollo (por simplicidad)
     options.SaveToken = true;
     
@@ -109,16 +100,49 @@ builder.Services.AddScoped<ITeamService, TeamService>();
 // Agrega el servicio de Autorización.
 builder.Services.AddAuthorization();
 
-// 3. Swagger / OpenAPI
+// Swagger / OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "PredictFlow API",
+        Version = "v1",
+        Description = "API de PredictFlow con autenticacion JWT",
+    });
+    
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Ingrese el token JWT asi: Bearer {token}",
+    });
+    
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
-// 4. Registrar los controladores
+// Registrar los controladores
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// 5. Configuración del pipeline
+// Configuración del pipeline
 app.UseSwagger();
     
 app.UseSwaggerUI(options =>
@@ -134,7 +158,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 
-// 6. Mapeo de los controladores
+// Mapeo de los controladores
 app.MapControllers();
 
 app.Run();
