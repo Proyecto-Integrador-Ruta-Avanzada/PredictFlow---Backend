@@ -31,11 +31,6 @@ public class TeamService : ITeamService
 
         return team;
     }
-    
-    public async Task<IEnumerable<Team>> GetAllTeamsAsync()
-    {
-        return await _teamRepository.GetAllAsync();
-    }
 
     public async Task<Team> GetTeamAsync(Guid teamId)
     {
