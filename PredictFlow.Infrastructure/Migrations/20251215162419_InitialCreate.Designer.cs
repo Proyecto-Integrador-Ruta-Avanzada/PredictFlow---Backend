@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PredictFlow.Infrastructure.Persistence;
 
@@ -11,9 +12,11 @@ using PredictFlow.Infrastructure.Persistence;
 namespace PredictFlow.Infrastructure.Migrations
 {
     [DbContext(typeof(PredictFlowDbContext))]
-    partial class PredictFlowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251215162419_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
