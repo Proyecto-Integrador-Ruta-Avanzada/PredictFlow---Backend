@@ -14,10 +14,8 @@ public class N8nWebhookService :IN8nWebhookService
     {
         _client = client;
         _webhookInvitationUrl = configuration["Urls:WebhookInvitationUrl"] ??
-                      Environment.GetEnvironmentVariable("WEBHOOK_INVITED_URL") ??
                       throw new Exception("Webhook url missing");
         _webhookAcceptedUrl = configuration["Urls:WebhookAcceptedUrl"] ??
-                              Environment.GetEnvironmentVariable("WEBHOOK_ACCEPTED_URL") ??
                               throw new Exception("Webhook url is missing");
     }
     public async Task SendInvitationAsync(string email, string link, string invitedBy, string teamName)
