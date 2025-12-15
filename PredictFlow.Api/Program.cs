@@ -10,6 +10,8 @@ using PredictFlow.Application.Settings;
 using PredictFlow.Domain.Interfaces;
 using PredictFlow.Infrastructure.Persistence;
 using PredictFlow.Infrastructure.Persistence.Repositories;
+using PredictFlow.Domain.Interfaces;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -87,12 +89,46 @@ builder.Services.AddAuthorization();
 
 // Swagger
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "PredictFlow API",
+        Version = "v1",
+        Description = "API de PredictFlow con autenticacion JWT",
+    });
+    
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Ingrese el token JWT asi: Bearer {token}",
+    });
+    
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
 
+// Configuración del pipeline
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
@@ -105,6 +141,8 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+
+// Mapeo de los controladores
 app.MapControllers();
 
 app.Run();
