@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using PredictFlow.Application.Interfaces;
+using PredictFlow.Application.Interfaces.ExternalConnection;
+using PredictFlow.Application.Interfaces.InvitationsInterfaces;
 using PredictFlow.Application.Services;
 using PredictFlow.Application.Settings;
 using PredictFlow.Infrastructure.Persistence;
@@ -37,12 +39,24 @@ builder.Services.AddScoped<IBoardColumnRepository, BoardColumnRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ISprintRepository, SprintRepository>();
 builder.Services.AddScoped<ISprintTaskRepository, SprintTaskRepository>();
-builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped<IInvitationsRepository, TeamInvitationRepository>();
 
 
-// Servicios de Autenticación
+// Registrar Servicios
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
+builder.Services.AddScoped<ISprintTaskService, SprintTaskService>();
+builder.Services.AddScoped<IInvitationLinkGenerator,InvitationLinkGenerator>();
+builder.Services.AddHttpClient<IN8nWebhookService, N8nWebhookService>();
+builder.Services.AddScoped<IInvitationService, InvitationsService>();
+builder.Services.AddScoped<IBoardColumnService, BoardColumnService>();
+builder.Services.AddScoped<IBoardService, BoardService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddScoped<ISprintService, SprintService>();
+builder.Services.AddScoped<IRiskService, RiskService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
 
 // Configuración de Autenticación JWT (NUEVO BLOQUE)
 
@@ -57,7 +71,17 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
 .AddJwtBearer(options =>
-{
+{builder.Services.AddScoped<ISprintTaskService, SprintTaskService>();
+builder.Services.AddScoped<IInvitationLinkGenerator,InvitationLinkGenerator>();
+builder.Services.AddHttpClient<IN8nWebhookService, N8nWebhookService>();
+builder.Services.AddScoped<IInvitationService, InvitationsService>();
+builder.Services.AddScoped<IBoardColumnService, BoardColumnService>();
+builder.Services.AddScoped<IBoardService, BoardService>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
+builder.Services.AddScoped<ISprintService, SprintService>();
+builder.Services.AddScoped<IRiskService, RiskService>();
+builder.Services.AddScoped<ITeamService, TeamService>();
     options.RequireHttpsMetadata = false; // Deshabilitar solo en desarrollo (por simplicidad)
     options.SaveToken = true;
     
@@ -95,16 +119,13 @@ builder.Services.AddControllers();
 var app = builder.Build();
 
 // 5. Configuración del pipeline
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
+app.UseSwagger();
     
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/swagger/v1/swagger.json", "PredictFlow API v1");
-        options.RoutePrefix = string.Empty; // Hace que Swagger sea la página inicial
-    });
-}
+app.UseSwaggerUI(options =>
+{
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "PredictFlow API v1");
+    options.RoutePrefix = string.Empty; // Hace que Swagger sea la página inicial
+});
 
 app.UseHttpsRedirection();
 
@@ -117,4 +138,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 //json {name": "Daniel Ariza","email": "danteariza85@gmail.com","password": "Qwe.123*"}//
