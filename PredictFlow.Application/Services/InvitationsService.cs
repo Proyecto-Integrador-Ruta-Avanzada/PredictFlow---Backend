@@ -64,7 +64,7 @@ public class InvitationsService : IInvitationService
                 Message = "Invitation is already expired" 
             };
         }
-        var user = await _userRepository.GetByEmailAsync(email);
+        var user = await _userRepository.GetByEmailAsync(new Email(email));
         if (user == null)
             return new InvitationValidateResultDto()
             {
@@ -98,7 +98,7 @@ public class InvitationsService : IInvitationService
         var invitation = await _invitationsRepository.GetByCodeAsync(code);
         invitation.Accept();
         await _invitationsRepository.SaveChangesAsync();
-        var invitedUser = await _userRepository.GetByEmailAsync(invitation.InvitedUserEmail.Value);
+        var invitedUser = await _userRepository.GetByEmailAsync(invitation.InvitedUserEmail);
         var user = await _userRepository.GetByIdAsync(invitation.InvitedByUserId);
         var team = await _teamRepository.GetByIdAsync(invitation.TeamId);
         await _webhookService.SendConfirmationAsync(user.Email.Value, invitedUser.Name, team.Name, user.Name);

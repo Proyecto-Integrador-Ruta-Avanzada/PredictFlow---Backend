@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PredictFlow.Domain.Entities;
 using PredictFlow.Domain.Interfaces;
+using PredictFlow.Domain.ValueObjects;
 
 namespace PredictFlow.Infrastructure.Persistence.Repositories;
 
@@ -20,11 +21,11 @@ public class UserRepository : IUserRepository
             .FirstOrDefaultAsync(u => u.Id == id);
     }
 
-    public async Task<User?> GetByEmailAsync(string email)
+    public async Task<User?> GetByEmailAsync(Email email)
     {
         return await _context.Users
             .AsNoTracking()
-            .FirstOrDefaultAsync(u => u.Email.Value == email);
+            .FirstOrDefaultAsync(u => u.Email == email);
     }
 
     public async Task AddAsync(User user)
