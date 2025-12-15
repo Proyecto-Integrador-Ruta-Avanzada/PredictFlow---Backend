@@ -1,6 +1,8 @@
-﻿namespace PredictFlow.Application.Interfaces;
+﻿using PredictFlow.Application.DTOs.Profile;
 
-public class IProfileService
+namespace PredictFlow.Application.Interfaces;
+
+public interface IProfileService
 {
-    
+    Task<ProfileResponseDto> GetMyProfileAsync(Guid userId);
 }
