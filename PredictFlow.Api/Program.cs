@@ -11,8 +11,6 @@ using PredictFlow.Domain.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Cargar y Configurar JwtSettings
-// Mapea la sección "JwtSettings" del appsettings.json a la clase C# JwtSettings
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
@@ -38,10 +36,13 @@ builder.Services.AddScoped<IBoardRepository, BoardRepository>();
 builder.Services.AddScoped<IBoardColumnRepository, BoardColumnRepository>();
 builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<ISprintRepository, SprintRepository>();
+builder.Services.AddScoped<ISprintTaskRepository, SprintTaskRepository>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
+
 
 // Servicios de Autenticación
 builder.Services.AddScoped<ITokenService, TokenService>();
-builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Configuración de Autenticación JWT (NUEVO BLOQUE)
 
@@ -116,3 +117,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+//json {name": "Daniel Ariza","email": "danteariza85@gmail.com","password": "Qwe.123*"}//
