@@ -11,7 +11,7 @@ public class TaskEntity
     public string Description { get; private set; }
 
     public Guid CreatedBy { get; private set; }
-    public Guid AssignedTo { get; private set; }
+    public Guid? AssignedTo { get; private set; }
 
     public Priority Priority { get; private set; }
     public StoryPoints StoryPoints { get; private set; }
