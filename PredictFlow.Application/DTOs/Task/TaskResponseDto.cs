@@ -9,7 +9,7 @@ public class TaskResponseDto
     public string Description { get; set; } = string.Empty;
 
     public Guid CreatedBy { get; set; }
-    public Guid AssignedTo { get; set; }
+    public Guid? AssignedTo { get; set; }
 
     public int Priority { get; set; }
     public int StoryPoints { get; set; }
