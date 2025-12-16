@@ -1,9 +1,7 @@
-﻿version: "3.9"
-
 services:
 
   traefik:
-    image: traefik:v3.0
+    image: traefik:v2.11
     container_name: traefik
     command:
       - "--api.dashboard=true"
@@ -25,11 +23,11 @@ services:
       - web
 
   api:
-    image: predictflow.api
+    image: ghcr.io/tequie835/predictflow-api:latest
     container_name: predictflow-api
     build:
       context: .
-      dockerfile: api/Dockerfile
+      dockerfile: PredictFlow.Api/Dockerfile
     env_file:
       - .env
     labels:
