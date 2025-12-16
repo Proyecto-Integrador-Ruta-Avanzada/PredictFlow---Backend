@@ -29,7 +29,7 @@ jobs:
           docker build -t ghcr.io/predictflow-org/predictflow-api:latest -f PredictFlow.Api/Dockerfile .
 
       - name: Push image
-        run: docker push ghcr.io/predictflow-org/predictflow-api:latest
+        run: docker push ghcr.io/tequie835/predictflow-api:latest
 
       - name: Deploy on VPS
         uses: appleboy/ssh-action@v1
