@@ -40,4 +40,4 @@ jobs:
           script: |
             cd /opt/predictflow
             docker compose pull api
-            docker compose up -d api
+            docker compose up -d 
