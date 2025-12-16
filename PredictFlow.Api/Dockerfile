@@ -6,10 +6,10 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-COPY ["api/PredictFlow.Api.csproj", "api/"]
-COPY ["application/PredictFlow.Application.csproj", "application/"]
-COPY ["domain/PredictFlow.Domain.csproj", "domain/"]
-COPY ["infrastructure/PredictFlow.Infrastructure.csproj", "infrastructure/"]
+COPY ["./PredictFlow.Api.csproj", "api/"]
+COPY ["./PredictFlow.Application.csproj", "application/"]
+COPY ["./PredictFlow.Domain.csproj", "domain/"]
+COPY ["./PredictFlow.Infrastructure.csproj", "infrastructure/"]
 
 RUN dotnet restore "api/PredictFlow.Api.csproj"
 
