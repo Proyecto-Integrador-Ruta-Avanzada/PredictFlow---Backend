@@ -20,7 +20,7 @@ WORKDIR "/src/api"
 RUN dotnet build "PredictFlow.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PredictFlow.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "PredictFlow.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
