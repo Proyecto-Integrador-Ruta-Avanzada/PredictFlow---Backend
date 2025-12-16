@@ -25,16 +25,17 @@ public class TeamService : ITeamService
         var owner = await _userRepository.GetByIdAsync(ownerId)
                      ?? throw new Exception("El usuario dueño no existe");
 
-        var ownerMember = new TeamMember(team.Id, ownerId, TeamRole.Lead, "", 100);
+        var ownerMember = new TeamMember(team.Id, ownerId, TeamRole.Lead, true,"", 100);
 
         await _teamRepository.AddMemberAsync(ownerMember);
 
         return team;
     }
 
-    public async Task<Team?> GetTeamAsync(Guid teamId)
+    public async Task<Team> GetTeamAsync(Guid teamId)
     {
-        return await _teamRepository.GetByIdAsync(teamId);
+        return await _teamRepository.GetByIdAsync(teamId)
+               ?? throw new Exception("Equipo no encontrado");
     }
 
     public async Task<IEnumerable<Team>> GetTeamsForUserAsync(Guid userId)
@@ -59,7 +60,7 @@ public class TeamService : ITeamService
         if (existing != null)
             throw new Exception("El usuario ya pertenece al equipo");
 
-        var member = new TeamMember(teamId, userId, role, skills, availability);
+        var member = new TeamMember(teamId, userId, role,false, skills, availability);
 
         await _teamRepository.AddMemberAsync(member);
     }

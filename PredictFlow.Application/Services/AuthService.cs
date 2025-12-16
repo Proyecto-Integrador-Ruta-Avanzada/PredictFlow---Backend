@@ -2,9 +2,7 @@ using PredictFlow.Application.DTOs;
 using PredictFlow.Application.Interfaces;
 using PredictFlow.Domain.Entities;
 using PredictFlow.Domain.Interfaces;
-using PredictFlow.Domain.ValueObjects; // Necesario para el Email VO
-using BCrypt.Net;
-using System;
+using PredictFlow.Domain.ValueObjects;
 
 namespace PredictFlow.Application.Services;
 
@@ -23,7 +21,7 @@ public class AuthService : IAuthService
     public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto)
     {
         // 1. Validar si el usuario ya existe
-        var existingUser = await _userRepository.GetByEmailAsync(dto.Email);
+        var existingUser = await _userRepository.GetByEmailAsync(new Email(dto.Email));
         if (existingUser != null)
         {
             throw new Exception("El correo electrónico ya está registrado.");
@@ -59,7 +57,7 @@ public class AuthService : IAuthService
     public async Task<AuthResponseDto> LoginAsync(LoginDto dto)
     {
         // 1. Buscar usuario
-        var user = await _userRepository.GetByEmailAsync(dto.Email);
+        var user = await _userRepository.GetByEmailAsync(new Email(dto.Email));
         if (user == null)
         {
             throw new Exception("Credenciales inválidas.");

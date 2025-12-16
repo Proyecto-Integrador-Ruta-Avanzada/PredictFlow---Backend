@@ -8,7 +8,7 @@ public class TeamMember
     public Guid UserId { get; private set; }
     
     public User User { get; private set; }
-    
+    public bool IsTeamAdmin { get; private set; }
     public TeamRole Role { get; private set; }
     public string Skills { get; private set; }
     public int Workload { get; private set; }
@@ -18,12 +18,13 @@ public class TeamMember
 
     private TeamMember() { }
 
-    public TeamMember(Guid teamId, Guid userId, TeamRole role, string skills, int availability)
+    public TeamMember(Guid teamId, Guid userId, TeamRole role,bool isTeamAdmin, string skills, int availability)
     {
         TeamId = teamId;
         UserId = userId;
         Role = role;
         Skills = skills;
+        IsTeamAdmin = isTeamAdmin;
         Workload = 0;   
         Availability = availability;
     }
