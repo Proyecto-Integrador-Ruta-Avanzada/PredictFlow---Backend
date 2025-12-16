@@ -26,7 +26,7 @@ jobs:
 
       - name: Build image
         run: |
-          docker build -t ghcr.io/tu-org/predictflow-api:latest -f api/Dockerfile .
+          docker build -t ghcr.io/tu-org/predictflow-api:latest -f PredictFlow.api/Dockerfile .
 
       - name: Push image
         run: docker push ghcr.io/tu-org/predictflow-api:latest
