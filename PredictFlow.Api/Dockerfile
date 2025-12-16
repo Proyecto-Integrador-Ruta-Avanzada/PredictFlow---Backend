@@ -6,20 +6,20 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-COPY ["./PredictFlow.Api.csproj", "api/"]
-COPY ["./PredictFlow.Application.csproj", "application/"]
-COPY ["./PredictFlow.Domain.csproj", "domain/"]
-COPY ["./PredictFlow.Infrastructure.csproj", "infrastructure/"]
+COPY ["PredictFlow.Api/PredictFlow.Api.csproj", "PredictFlow.Api/"]
+COPY ["PredictFlow.Application/PredictFlow.Application.csproj", "PredictFlow.Application/"]
+COPY ["PredictFlow.Domain/PredictFlow.Domain.csproj", "PredictFlow.Domain/"]
+COPY ["PredictFlow.Infrastructure/PredictFlow.Infrastructure.csproj", "PredictFlow.Infrastructure/"]
 
-RUN dotnet restore "api/PredictFlow.Api.csproj"
+RUN dotnet restore "PredictFlow.Api/PredictFlow.Api.csproj"
 
 COPY . .
 
-WORKDIR "/src/api"
+WORKDIR "/src/PredictFlow.Api"
 RUN dotnet build "PredictFlow.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "PredictFlow.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "PredictFlow.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
