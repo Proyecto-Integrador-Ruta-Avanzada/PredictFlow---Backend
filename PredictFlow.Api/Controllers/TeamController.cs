@@ -20,7 +20,25 @@ public class TeamController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateTeam([FromBody] CreateTeamRequestDto dto)
     {
-        var ownerId = Guid.Parse(User.FindFirst(JwtRegisteredClaimNames.Sub)!.Value);
+        // 1. Intentamos obtener el ID usando el nombre estándar de .NET
+        var idClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+
+        // 2. Si es nulo, intentamos buscarlo como "sub" (estándar JWT)
+        if (idClaim == null)
+        {
+            idClaim = User.FindFirst(JwtRegisteredClaimNames.Sub);
+        }
+
+        // 3. Validación de seguridad
+        if (idClaim == null)
+        {
+            return Unauthorized(new { message = "Token inválido: No se encontró el ID del usuario." });
+        }
+
+        if (!Guid.TryParse(idClaim.Value, out var ownerId))
+        {
+            return Unauthorized(new { message = "Token inválido: El ID no tiene el formato correcto." });
+        }
 
         var team = await _teamService.CreateTeamAsync(dto.Name, ownerId);
 
@@ -36,7 +54,6 @@ public class TeamController : ControllerBase
     public async Task<IActionResult> GetTeam(Guid teamId)
     {
         var team = await _teamService.GetTeamAsync(teamId);
-
         return team == null ? NotFound("Team no encontrado") : Ok(team);
     }
 
@@ -51,14 +68,9 @@ public class TeamController : ControllerBase
     public async Task<IActionResult> GetMembers(Guid teamId)
     {
         var members = await _teamService.GetMembersAsync(teamId);
-
         return Ok(members.Select(m => new TeamMemberResponseDto
         {
-            UserId = m.UserId,
-            Role = m.Role,
-            Skills = m.Skills,
-            Availability = m.Availability,
-            Workload = m.Workload
+            UserId = m.UserId, Role = m.Role, Skills = m.Skills, Availability = m.Availability, Workload = m.Workload
         }));
     }
 
