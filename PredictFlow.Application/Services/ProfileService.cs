@@ -25,7 +25,7 @@ public class ProfileService : IProfileService
         var user = await _userRepository.GetByIdAsync(userId)
                    ?? throw new Exception("User not found");
 
-        var teams = await _teamRepository.GetTeamsByUserIdAsync(userId);
+        var teams = await _teamRepository.GetByUserIdAsync(userId);
 
         var teamProfiles = new List<TeamProfileDto>();
 

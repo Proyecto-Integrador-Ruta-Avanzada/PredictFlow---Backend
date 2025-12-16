@@ -32,9 +32,10 @@ public class TeamService : ITeamService
         return team;
     }
 
-    public async Task<Team?> GetTeamAsync(Guid teamId)
+    public async Task<Team> GetTeamAsync(Guid teamId)
     {
-        return await _teamRepository.GetByIdAsync(teamId);
+        return await _teamRepository.GetByIdAsync(teamId)
+               ?? throw new Exception("Equipo no encontrado");
     }
 
     public async Task<IEnumerable<Team>> GetTeamsForUserAsync(Guid userId)

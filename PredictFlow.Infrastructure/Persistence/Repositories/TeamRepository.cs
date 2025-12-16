@@ -21,14 +21,6 @@ public class TeamRepository : ITeamRepository
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
-    public async Task<IEnumerable<Team>> GetAllAsync()
-    {
-        return await _context.Teams
-            .Include(t => t.Members)
-            .ThenInclude(m => m.User)
-            .ToListAsync();
-    }
-
     public async Task<IEnumerable<Team>> GetByUserIdAsync(Guid userId)
     {
         return await _context.Teams
@@ -37,14 +29,7 @@ public class TeamRepository : ITeamRepository
             .Where(t => t.Members.Any(m => m.UserId == userId))
             .ToListAsync();
     }
-
-    public async Task<List<Team>> GetTeamsByUserIdAsync(Guid userId)
-    {
-        return await _context.Teams
-            .Include(t => t.Members)
-            .Where(t => t.Members.Any(m => m.UserId == userId))
-            .ToListAsync();
-    }
+    
     public async Task<TeamMember?> GetMemberAsync(Guid teamId, Guid userId)
     {
         return await _context.TeamMembers
@@ -55,12 +40,6 @@ public class TeamRepository : ITeamRepository
     public async Task AddAsync(Team team)
     {
         await _context.Teams.AddAsync(team);
-        await _context.SaveChangesAsync();
-    }
-    
-    public async Task UpdateAsync(Team team)
-    {
-        _context.Teams.Update(team);
         await _context.SaveChangesAsync();
     }
 
