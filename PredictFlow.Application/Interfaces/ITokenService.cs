@@ -1,8 +1,15 @@
+using PredictFlow.Domain.Entities;
+
 namespace PredictFlow.Application.Interfaces;
 
 public interface ITokenService
 {
-    string GenerateAccessToken(Guid userId, string email, string fullName);
+    // Método actualizado para recibir la entidad User completa
+    string GenerateToken(User user);
+    
+    // Método para el Refresh Token (Nuevo)
     string GenerateRefreshToken();
-    public string GenerateInvitationCode(int length = 48);
+    
+    // Método para invitaciones (Existente)
+    string GenerateInvitationCode(int length = 48);
 }

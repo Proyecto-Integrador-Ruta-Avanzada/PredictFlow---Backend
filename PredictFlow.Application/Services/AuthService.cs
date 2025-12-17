@@ -2,7 +2,7 @@ using PredictFlow.Application.DTOs;
 using PredictFlow.Application.Interfaces;
 using PredictFlow.Domain.Entities;
 using PredictFlow.Domain.Interfaces;
-using PredictFlow.Domain.ValueObjects;
+using PredictFlow.Domain.ValueObjects; // <-- NECESARIO para usar 'Email'
 
 namespace PredictFlow.Application.Services;
 
@@ -17,82 +17,61 @@ public class AuthService : IAuthService
         _tokenService = tokenService;
     }
 
-    // Método de Registro
-    public async Task<AuthResponseDto> RegisterAsync(RegisterDto dto)
+    public async Task<string> RegisterAsync(RegisterDto registerDto)
     {
-        // 1. Validar si el usuario ya existe
-        var existingUser = await _userRepository.GetByEmailAsync(new Email(dto.Email));
+        // CORRECCIÓN 1: Convertimos el string a ValueObject Email
+        var emailVo = new Email(registerDto.Email);
+
+        // Ahora pasamos el objeto emailVo, no el string
+        var existingUser = await _userRepository.GetByEmailAsync(emailVo);
+        
         if (existingUser != null)
         {
-            throw new Exception("El correo electrónico ya está registrado.");
+            throw new Exception("El correo ya está registrado");
         }
 
-        // 2. Hashear la contraseña
-        string passwordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password);
+        var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 
-        // 3. Crear la entidad User (Usando tu constructor existente en User.cs)
-        // Nota: Asignamos un rol por defecto "User"
-        var newUser = new User(
-            dto.Name, 
-            new Email(dto.Email), // Usamos el Value Object Email
-            passwordHash, 
-            "User" 
-        );
+        // Reutilizamos emailVo que ya creamos arriba
+        var newUser = new User(registerDto.Name, emailVo, passwordHash, "User");
 
-        // 4. Guardar en base de datos
         await _userRepository.AddAsync(newUser);
 
-        // 5. Generar Token JWT usando tu TokenService existente
-        var token = _tokenService.GenerateAccessToken(newUser.Id, newUser.Email.Value, newUser.Name);
-
-        return new AuthResponseDto
-        {
-            Token = token,
-            Email = newUser.Email.Value,
-            Name = newUser.Name
-        };
+        return "Usuario registrado exitosamente. Por favor inicia sesión.";
     }
 
-    // Método de Login
-    public async Task<AuthResponseDto> LoginAsync(LoginDto dto)
+    public async Task<AuthResponseDTO> LoginAsync(LoginDto loginDto)
     {
-        // 1. Buscar usuario
-        var user = await _userRepository.GetByEmailAsync(new Email(dto.Email));
-        if (user == null)
+        // CORRECCIÓN 2: Convertimos el string a ValueObject Email aquí también
+        var emailVo = new Email(loginDto.Email);
+
+        var user = await _userRepository.GetByEmailAsync(emailVo);
+        
+        if (user == null || !BCrypt.Net.BCrypt.Verify(loginDto.Password, user.PasswordHash))
         {
-            throw new Exception("Credenciales inválidas.");
+            throw new Exception("Credenciales inválidas");
         }
 
-        // 2. Verificar contraseña (Hash vs Texto plano)
-        bool isPasswordValid = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
-        if (!isPasswordValid)
-        {
-            throw new Exception("Credenciales inválidas.");
-        }
-
-        // 3. Generar Token
-        var token = _tokenService.GenerateAccessToken(user.Id, user.Email.Value, user.Name);
-
-        return new AuthResponseDto
-        {
-            Token = token,
-            Email = user.Email.Value,
-            Name = user.Name
-        };
-    }
-
-    // Método de Generación de Access Token y Refresh Token
-    public async Task<(string accessToken, string refreshToken)> GenerateTokens(User user)
-    {
-        var accessToken = _tokenService.GenerateAccessToken(user.Id, user.Email.Value, user.Name);
+        // 1. Generar Access Token
+        var accessToken = _tokenService.GenerateToken(user);
+        
+        // 2. Generar Refresh Token
         var refreshToken = _tokenService.GenerateRefreshToken();
 
+        // 3. Guardar en Base de Datos
         user.RefreshToken = refreshToken;
-        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7);
-
-        // Actualizamos el usuario con el nuevo RefreshToken
+        user.RefreshTokenExpiryTime = DateTime.UtcNow.AddDays(7); 
+        
         await _userRepository.UpdateAsync(user);
 
-        return (accessToken, refreshToken);
+        // 4. Devolver respuesta
+        return new AuthResponseDTO
+        {
+            Token = accessToken,
+            RefreshToken = refreshToken,
+            UserName = user.Name,
+            Email = user.Email.Value, // Aquí extraemos el string del ValueObject
+            Id = user.Id
+        };
     }
 }

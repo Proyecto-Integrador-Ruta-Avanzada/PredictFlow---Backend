@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PredictFlow.Application.DTOs;
-using PredictFlow.Application.Interfaces;//.
+using PredictFlow.Application.Interfaces;
 
 namespace PredictFlow.Api.Controllers;
 
@@ -20,10 +20,11 @@ public class AuthController : ControllerBase
     {
         try
         {
-            var result = await _authService.RegisterAsync(dto);
-            return Ok(result);
+            var messageResult = await _authService.RegisterAsync(dto);
+            // CAMBIO CLAVE: Devolvemos un objeto JSON, no texto plano
+            return Ok(new { message = messageResult });
         }
-        catch (ArgumentException ex) // Para capturar errores del ValueObject Email
+        catch (ArgumentException ex) // Captura errores de validación (ej. Email inválido)
         {
              return BadRequest(new { message = ex.Message });
         }
@@ -43,6 +44,7 @@ public class AuthController : ControllerBase
         }
         catch (Exception ex)
         {
+            // Unauthorized (401) es el código correcto para login fallido
             return Unauthorized(new { message = ex.Message });
         }
     }

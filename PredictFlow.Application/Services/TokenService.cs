@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using PredictFlow.Application.Settings;
+using PredictFlow.Domain.Entities; // Necesario para 'User'
 
 namespace PredictFlow.Application.Services;
 
@@ -18,13 +19,18 @@ public class TokenService : ITokenService
         _jwt = jwt.Value;
     }
 
-    public string GenerateAccessToken(Guid userId, string email, string fullName)
+    // CORRECCIÓN 1: El método se llama GenerateToken y recibe (User user)
+    public string GenerateToken(User user)
     {
-        var claims = new[]
+        var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
-            new Claim(JwtRegisteredClaimNames.Email, email),
-            new Claim("fullName", fullName)
+            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()), // Para máxima compatibilidad
+            
+            // CORRECCIÓN 2: Usamos .Value porque Email es un ValueObject
+            new Claim(JwtRegisteredClaimNames.Email, user.Email.Value), 
+            
+            new Claim("fullName", user.Name)
         };
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.SecretKey));
