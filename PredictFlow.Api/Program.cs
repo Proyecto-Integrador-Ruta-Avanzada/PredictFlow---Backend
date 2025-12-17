@@ -109,7 +109,8 @@ builder.Services.AddCors(options =>
         policy
             .WithOrigins(
                 "http://localhost:3000",
-                "https://api-pf-backend.xyz/index.html"
+                "https://api-pf-backend.xyz/index.html",
+                "https://predict-flow-frontend.vercel.app"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
@@ -180,3 +181,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
