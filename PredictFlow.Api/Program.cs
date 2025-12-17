@@ -2,6 +2,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using PredictFlow.Application.Interfaces;
 using PredictFlow.Application.Interfaces.ExternalConnection;
 using PredictFlow.Application.Interfaces.InvitationsInterfaces;
@@ -10,15 +11,18 @@ using PredictFlow.Application.Settings;
 using PredictFlow.Domain.Interfaces;
 using PredictFlow.Infrastructure.Persistence;
 using PredictFlow.Infrastructure.Persistence.Repositories;
-using PredictFlow.Domain.Interfaces;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// =======================
+// JWT SETTINGS
+// =======================
 builder.Services.Configure<JwtSettings>(
     builder.Configuration.GetSection("JwtSettings"));
 
-// DbContext MySQL
+// =======================
+// DB CONTEXT (MySQL)
+// =======================
 builder.Services.AddDbContext<PredictFlowDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -29,7 +33,9 @@ builder.Services.AddDbContext<PredictFlowDbContext>(options =>
         mySqlOptions => mySqlOptions.EnableRetryOnFailure());
 });
 
-// Repositorios
+// =======================
+// REPOSITORIES
+// =======================
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<ITeamRepository, TeamRepository>();
 builder.Services.AddScoped<IProjectRepository, ProjectRepository>();
@@ -40,7 +46,9 @@ builder.Services.AddScoped<ISprintRepository, SprintRepository>();
 builder.Services.AddScoped<ISprintTaskRepository, SprintTaskRepository>();
 builder.Services.AddScoped<IInvitationsRepository, TeamInvitationRepository>();
 
-// Servicios
+// =======================
+// SERVICES
+// =======================
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
@@ -56,7 +64,9 @@ builder.Services.AddScoped<ISprintService, SprintService>();
 builder.Services.AddScoped<IRiskService, RiskService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
 
-// JWT
+// =======================
+// AUTHENTICATION (JWT)
+// =======================
 var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
 
 builder.Services.AddAuthentication(options =>
@@ -66,13 +76,15 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = false; // solo dev
+    options.RequireHttpsMetadata = false; 
     options.SaveToken = true;
 
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings!.SecretKey)),
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(jwtSettings!.SecretKey)
+        ),
 
         ValidateIssuer = true,
         ValidIssuer = jwtSettings.Issuer,
@@ -87,7 +99,26 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
-// Swagger
+// =======================
+// CORS 
+// =======================
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins(
+                "http://localhost:3000",
+                "https://api-pf-backend.xyz/index.html"
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+
+// =======================
+// SWAGGER
+// =======================
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
@@ -95,9 +126,9 @@ builder.Services.AddSwaggerGen(options =>
     {
         Title = "PredictFlow API",
         Version = "v1",
-        Description = "API de PredictFlow con autenticacion JWT",
+        Description = "API de PredictFlow con autenticación JWT",
     });
-    
+
     options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -105,9 +136,9 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "Ingrese el token JWT asi: Bearer {token}",
+        Description = "Ingrese el token JWT así: Bearer {token}",
     });
-    
+
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -128,7 +159,9 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configuración del pipeline
+// =======================
+// PIPELINE
+// =======================
 app.UseSwagger();
 app.UseSwaggerUI(options =>
 {
@@ -138,11 +171,12 @@ app.UseSwaggerUI(options =>
 
 app.UseHttpsRedirection();
 
+
+app.UseCors("AllowFrontend");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
-
-// Mapeo de los controladores
 app.MapControllers();
 
 app.Run();
