@@ -77,7 +77,7 @@ public class InvitationsService : IInvitationService
         var team = await _teamRepository.GetMemberAsync(teamId.Id, user.Id);
         if (team != null) return new InvitationValidateResultDto
         {
-            CodeIsValid = false,
+            CodeIsValid = true,
             InvitationIsExpired = false,
             EmailExists = true,
             UserAlreadyInTeam = true,
@@ -85,7 +85,7 @@ public class InvitationsService : IInvitationService
         };
         return new InvitationValidateResultDto
         {
-            CodeIsValid = false,
+            CodeIsValid = true,
             InvitationIsExpired = false,
             EmailExists = true,
             UserAlreadyInTeam = false,
