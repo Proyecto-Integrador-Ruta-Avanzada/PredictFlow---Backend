@@ -27,7 +27,7 @@ public class AuthService : IAuthService
         
         if (existingUser != null)
         {
-            throw new Exception("El correo ya está registrado");
+            throw new Exception("El correo electrónico ya está registrado.");
         }
 
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);

@@ -76,7 +76,7 @@ public class AuthServiceTests
 
         await act.Should()
             .ThrowAsync<Exception>()
-            .WithMessage("Credenciales inválidas.");
+            .WithMessage("Credenciales inválidas");
     }
 
     [Fact]
