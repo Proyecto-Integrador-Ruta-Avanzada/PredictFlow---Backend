@@ -1,0 +1,53 @@
+﻿# ===== Git / VCS =====
+.git
+.gitignore
+.gitattributes
+
+# ===== IDEs / Editors =====
+.vscode
+.vs
+.idea
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ===== Build output =====
+bin/
+obj/
+**/bin/
+**/obj/
+
+# ===== Test results =====
+TestResults/
+
+# ===== Logs =====
+*.log
+logs/
+log/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Docker =====
+docker-compose.yml
+docker-compose.*.yml
+.env
+
+# ===== Documentation =====
+*.md
+
+# ===== Temp / cache =====
+*.tmp
+*.temp
+*.swp
+*.bak
+*.cache
+
+# ===== NuGet =====
+.nuget/
+packages/
+
+# ===== Others =====
+node_modules/
