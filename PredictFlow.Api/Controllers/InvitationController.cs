@@ -1,3 +1,4 @@
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PredictFlow.Application.DTOs.InvitationDtos;
@@ -21,6 +22,22 @@ public class InvitationController : ControllerBase
     {
         try
         {
+            var idClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (idClaim == null)
+            {
+                idClaim = User.FindFirst(JwtRegisteredClaimNames.Sub);
+            }
+            if (idClaim == null)
+            {
+                return Unauthorized(new { message = "Token inválido: No se encontró el ID del usuario." });
+            }
+
+            if (!Guid.TryParse(idClaim.Value, out var ownerId))
+            {
+                return Unauthorized(new { message = "Token inválido: El ID no tiene el formato correcto." });
+            }
+
+            inviteMemberRequestDto.InvitedByUserId = ownerId;
             await _service.InviteMember(inviteMemberRequestDto);
             return Ok(new 
             {
