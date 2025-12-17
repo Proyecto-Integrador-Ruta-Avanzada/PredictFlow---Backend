@@ -15,6 +15,6 @@ public class InvitationLinkGenerator : IInvitationLinkGenerator
     }
     public string GenerateInvitationLink(string code, string email)
     {
-        return $"{_frontUrl}/invitation?code={code}&email={email}";
+        return $"{_frontUrl}?code={code}&email={email}";
     }
 }
