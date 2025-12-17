@@ -88,18 +88,23 @@ public class AuthServiceTests
             Password = "123456"
         };
 
+        // Simulando que creamos un usuario con un email y un password hasheado
         var user = CreateUser("123456");
 
+        // Configuramos el mock para obtener el usuario desde el repositorio
         _userRepositoryMock
             .Setup(x => x.GetByEmailAsync(It.IsAny<Email>()))
             .ReturnsAsync(user);
 
+        // Actualizamos la configuración del mock para que devuelva el token con el objeto user completo
         _tokenServiceMock
-            .Setup(x => x.GenerateAccessToken(user.Id, user.Email.Value, user.Name))
+            .Setup(x => x.GenerateToken(It.IsAny<User>()))  // Aquí usamos el objeto 'User' completo
             .Returns("fake-jwt-token");
 
+        // Ejecutamos el método de login
         var result = await _service.LoginAsync(dto);
 
+        // Verificamos que los resultados sean correctos
         result.Should().NotBeNull();
         result.Token.Should().Be("fake-jwt-token");
         result.Email.Should().Be(user.Email.Value);
