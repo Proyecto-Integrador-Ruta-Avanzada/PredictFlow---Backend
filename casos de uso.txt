@@ -1,0 +1,158 @@
+📌 Actores del Sistema
+👤 Usuario
+
+Usuario autenticado del sistema (admin o miembro de equipo).
+
+👑 Administrador de Equipo
+
+Usuario con permisos especiales dentro de un Team.
+
+⚙️ Sistema
+
+Servicios automáticos (validaciones, reglas, estados).
+
+📘 CASOS DE USO – GESTIÓN DE USUARIOS
+UC-01 Registrarse
+
+Actor: Usuario
+Descripción: El usuario crea una cuenta en el sistema.
+
+Flujo principal:
+
+Usuario ingresa datos de registro
+
+Sistema valida unicidad de email
+
+Sistema crea el usuario
+
+Usuario queda autenticado
+
+UC-02 Iniciar sesión
+
+Actor: Usuario
+Descripción: El usuario accede al sistema mediante credenciales.
+
+Flujo principal:
+
+Usuario ingresa email y contraseña
+
+Sistema valida credenciales
+
+Sistema genera token JWT
+
+Usuario accede al sistema
+
+UC-03 Ver perfil
+
+Actor: Usuario
+Descripción: El usuario consulta su información personal.
+
+📘 CASOS DE USO – GESTIÓN DE EQUIPOS
+UC-04 Crear equipo
+
+Actor: Usuario
+Descripción: El usuario crea un equipo y se convierte en administrador.
+
+UC-05 Invitar usuario al equipo
+
+Actor: Administrador de Equipo
+Descripción: El administrador invita usuarios a su equipo.
+
+Flujo alterno:
+– Usuario acepta invitación
+
+UC-06 Gestionar miembros del equipo
+
+Actor: Administrador de Equipo
+Descripción: Cambia roles, carga laboral o elimina miembros.
+
+📘 CASOS DE USO – GESTIÓN DE PROYECTOS
+UC-07 Crear proyecto
+
+Actor: Administrador de Equipo
+Descripción: Crea un proyecto asociado a su equipo.
+
+UC-08 Ver proyectos del equipo
+
+Actor: Usuario
+Descripción: Consulta proyectos asociados a su equipo.
+
+📘 CASOS DE USO – TABLEROS (KANBAN)
+UC-09 Crear tablero
+
+Actor: Usuario
+Descripción: Crea un tablero dentro de un proyecto.
+
+UC-10 Configurar columnas del tablero
+
+Actor: Usuario
+Descripción: Define columnas (To Do, In Progress, Done).
+
+📘 CASOS DE USO – SPRINTS
+UC-11 Crear sprint
+
+Actor: Usuario
+Descripción: Crea un sprint para un proyecto.
+
+UC-12 Asignar tareas a sprint
+
+Actor: Usuario
+Descripción: Asocia tareas a un sprint.
+
+📘 CASOS DE USO – TAREAS
+UC-13 Crear tarea
+
+Actor: Usuario
+Descripción: Crea una tarea en una columna del tablero.
+
+UC-14 Asignar tarea
+
+Actor: Usuario
+Descripción: Asigna una tarea a un miembro del equipo.
+
+UC-15 Mover tarea entre columnas
+
+Actor: Usuario
+Descripción: Cambia el estado de la tarea (Kanban).
+
+UC-16 Cambiar estado de tarea
+
+Actor: Usuario
+Descripción: Cambia el estado (Todo, Doing, Done).
+
+UC-17 Registrar horas reales
+
+Actor: Usuario
+Descripción: Registra horas trabajadas en la tarea.
+
+UC-18 Definir dependencias entre tareas
+
+Actor: Usuario
+Descripción: Define que una tarea depende de otra.
+
+📘 CASOS DE USO – CONSULTAS Y MÉTRICAS
+UC-19 Ver tareas asignadas
+
+Actor: Usuario
+Descripción: Consulta sus tareas activas.
+
+UC-20 Ver progreso del sprint
+
+Actor: Usuario
+Descripción: Visualiza avance y cumplimiento del sprint.
+
+UC-21 Ver carga de trabajo del equipo
+
+Actor: Administrador de Equipo
+Descripción: Visualiza distribución de tareas.
+
+📘 CASOS DE USO – SISTEMA
+UC-22 Validar dependencias de tareas
+
+Actor: Sistema
+Descripción: Impide cerrar tareas con dependencias abiertas.
+
+UC-23 Actualizar estados automáticamente
+
+Actor: Sistema
+Descripción: Actualiza estados por movimiento o reglas.
